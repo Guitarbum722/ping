@@ -7,7 +7,7 @@ import (
 
 // Ping will ping host 3 times and returns the summary of the ping results.
 func Ping(host string) (string, error) {
-	output, err := exec.Command("ping", host, "-c 3").Output()
+	output, err := exec.Command("ping", "-c 3", host).Output()
 	if err != nil {
 		return "", err
 	}
