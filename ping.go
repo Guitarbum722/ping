@@ -2,7 +2,6 @@ package ping
 
 import (
 	"os/exec"
-	"strings"
 )
 
 // Ping will ping host 3 times and returns the summary of the ping results.
@@ -11,6 +10,5 @@ func Ping(host string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	lines := strings.Split(string(output), "\n")
-	return lines[len(lines)-2], nil
+	return string(output), nil
 }
